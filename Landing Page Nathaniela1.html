@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KataKita - Jasa Menulis & Mengetik</title>
+
+    <style>
+
+        /* ================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        /* ================================
+           BODY
+        ================================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f0e8;
+            color: #3e2723;
+            line-height: 1.6;
+        }
+
+
+        /* ================================
+           NAVBAR
+        ================================= */
+
+        .navbar {
+            background-color: #4e342e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #ffe0b2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffcc80;
+        }
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 550px;
+
+            background: linear-gradient(
+                rgba(78,52,46,0.92),
+                rgba(78,52,46,0.92)
+            );
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            color: #ffe0b2;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+
+        /* ================================
+           BUTTON
+        ================================= */
+
+        .btn {
+            display: inline-block;
+            background-color: #c87941;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a85e2c;
+            transform: translateY(-3px);
+        }
+
+
+        /* ================================
+           SECTION
+        ================================= */
+
+        section {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 45px;
+            background-color: #fffaf5;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(78,52,46,0.10);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #5d4037;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            color: #6d5147;
+        }
+
+
+        /* ================================
+           TENTANG
+        ================================= */
+
+        .about {
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 17px;
+        }
+
+
+        /* ================================
+           LAYANAN
+        ================================= */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background-color: #f3e2d0;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+            border: 2px solid #ead0b7;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 18px rgba(78,52,46,0.15);
+        }
+
+        .service-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #5d4037;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .service-card p {
+            font-size: 15px;
+            color: #6d5147;
+        }
+
+
+        /* ================================
+           HARGA
+        ================================= */
+
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .price-card {
+            background-color: #f3e2d0;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px;
+            border: 2px solid #ead0b7;
+        }
+
+        .price-card h3 {
+            color: #5d4037;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #b35c27;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .price-card li {
+            margin: 8px 0;
+        }
+
+
+        /* ================================
+           KEUNGGULAN
+        ================================= */
+
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .advantage {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .advantage-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .advantage h3 {
+            color: #5d4037;
+            margin-bottom: 8px;
+        }
+
+
+        /* ================================
+           CARA PESAN
+        ================================= */
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            width: 220px;
+            text-align: center;
+            background-color: #f3e2d0;
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .step-number {
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background-color: #6d4030;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .step h3 {
+            color: #5d4037;
+            margin-bottom: 8px;
+        }
+
+
+        /* ================================
+           FORM ORDER
+        ================================= */
+
+        .order-form {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #5d4037;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+
+            border: 2px solid #ead0b7;
+            border-radius: 10px;
+
+            background-color: #fffaf5;
+            color: #3e2723;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #c87941;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .order-button {
+            width: 100%;
+            font-size: 16px;
+        }
+
+
+        /* ================================
+           CTA
+        ================================= */
+
+        .cta {
+            background-color: #5d4037;
+            color: white;
+            text-align: center;
+            padding: 55px 25px;
+            border-radius: 18px;
+        }
+
+        .cta h2 {
+            color: #ffe0b2;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+
+        /* ================================
+           KONTAK
+        ================================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .hero-image {
+            margin: 25px auto;
+            max-width: 500px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-box {
+            background-color: #f3e2d0;
+            padding: 20px 30px;
+            border-radius: 12px;
+            min-width: 230px;
+        }
+
+        .contact-box h3 {
+            color: #5d4037;
+            margin-bottom: 5px;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background-color: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+
+        footer strong {
+            color: #ffe0b2;
+        }
+
+
+        /* ================================
+           RESPONSIVE TABLET
+        ================================= */
+
+        @media (max-width: 850px) {
+
+            .navbar {
+                padding: 15px 25px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .services,
+            .price-list,
+            .advantages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* ================================
+           RESPONSIVE HP
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                width: 92%;
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 26px;
+            }
+
+            .services,
+            .price-list,
+            .advantages {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                width: 100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         NAVBAR
+    ================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            ✍️ KataKita
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#beranda">Beranda</a>
+            </li>
+
+            <li>
+                <a href="#tentang">Tentang</a>
+            </li>
+
+            <li>
+                <a href="#layanan">Layanan</a>
+            </li>
+
+            <li>
+                <a href="#harga">Harga</a>
+            </li>
+
+            <li>
+                <a href="#order">Order</a>
+            </li>
+
+            <li>
+                <a href="#kontak">Kontak</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <header class="hero" id="beranda">
+
+        <div class="hero-content">
+
+            <h1>
+                KataKita
+            </h1>
+
+            <h2>
+                Jasa Menulis & Mengetik untuk Berbagai Kebutuhan
+            </h2>
+
+            <p>
+                Punya ide cerita tapi bingung menuangkannya?
+                Butuh bantuan mengetik dokumen dengan rapi?
+                Serahkan pada KataKita!
+            </p>
+
+            <a href="#order" class="btn">
+                Pesan Sekarang ✨
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================
+         TENTANG
+    ================================= -->
+
+    <section id="tentang" class="about">
+
+        <h2>
+            Tentang KataKita
+        </h2>
+
+        <p class="section-description">
+
+            KataKita adalah jasa sederhana yang membantu
+            mengubah ide menjadi tulisan yang lebih rapi,
+            menarik, dan mudah dibaca.
+
+            Cocok untuk kamu yang membutuhkan bantuan
+            membuat cerita, mengetik dokumen, atau
+            merapikan tulisan.
+
+        </p>
+
+    </section>
+
+
+    <!-- ================================
+         LAYANAN
+    ================================= -->
+
+    <section id="layanan">
+
+        <h2>
+            Layanan KataKita
+        </h2>
+
+        <p class="section-description">
+            Pilih layanan yang sesuai dengan kebutuhanmu.
+        </p>
+
+        <div class="services">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Jasa Membuat Cerita
+                </h3>
+
+                <p>
+                    Membantu membuat cerita pendek,
+                    cerita fiksi, cerita pengalaman,
+                    atau cerita sesuai ide yang kamu berikan.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⌨️
+                </div>
+
+                <h3>
+                    Jasa Mengetik
+                </h3>
+
+                <p>
+                    Mengetik dokumen dari tulisan tangan,
+                    foto, atau file agar menjadi dokumen
+                    digital yang lebih rapi.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Rapikan Tulisan
+                </h3>
+
+                <p>
+                    Membantu merapikan format tulisan,
+                    paragraf, dan struktur dokumen
+                    agar terlihat lebih profesional.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         HARGA
+    ================================= -->
+
+    <section id="harga">
+
+        <h2>
+            Pilihan Harga
+        </h2>
+
+        <p class="section-description">
+            Harga dapat disesuaikan dengan tingkat
+            kesulitan dan jumlah halaman.
+        </p>
+
+        <div class="price-list">
+
+
+            <div class="price-card">
+
+                <h3>
+                    Mengetik
+                </h3>
+
+                <div class="price">
+                    Mulai Rp3.000
+                </div>
+
+                <ul>
+                    <li>✓ Per halaman</li>
+                    <li>✓ Format rapi</li>
+                    <li>✓ File digital</li>
+                </ul>
+
+                <a href="#order" class="btn">
+                    Pesan
+                </a>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>
+                    Membuat Cerita
+                </h3>
+
+                <div class="price">
+                    Mulai Rp10.000
+                </div>
+
+                <ul>
+                    <li>✓ Berdasarkan ide kamu</li>
+                    <li>✓ Cerita original</li>
+                    <li>✓ Bisa revisi</li>
+                </ul>
+
+                <a href="#order" class="btn">
+                    Pesan
+                </a>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>
+                    Paket Lengkap
+                </h3>
+
+                <div class="price">
+                    Mulai Rp15.000
+                </div>
+
+                <ul>
+                    <li>✓ Menulis</li>
+                    <li>✓ Mengetik</li>
+                    <li>✓ Merapikan format</li>
+                </ul>
+
+                <a href="#order" class="btn">
+                    Pesan
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         KEUNGGULAN
+    ================================= -->
+
+    <section>
+
+        <h2>
+            Kenapa Pilih KataKita?
+        </h2>
+
+        <div class="advantages">
+
+
+            <div class="advantage">
+
+                <div class="advantage-icon">
+                    ✨
+                </div>
+
+                <h3>
+                    Rapi
+                </h3>
+
+                <p>
+                    Tulisan dan dokumen dibuat
+                    dengan format yang rapi.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="advantage-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Praktis
+                </h3>
+
+                <p>
+                    Kamu cukup memberikan bahan
+                    dan kebutuhanmu.
+                </p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <div class="advantage-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Sesuai Ide
+                </h3>
+
+                <p>
+                    Cerita dapat dibuat berdasarkan
+                    konsep dan ide yang kamu inginkan.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CARA PESAN
+    ================================= -->
+
+    <section>
+
+        <h2>
+            Cara Memesan
+        </h2>
+
+        <p class="section-description">
+            Proses pemesanan mudah dan sederhana.
+        </p>
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Isi Form
+                </h3>
+
+                <p>
+                    Isi data dan detail pesanan
+                    melalui form order.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Kirim Pesanan
+                </h3>
+
+                <p>
+                    Klik tombol kirim dan kamu
+                    akan diarahkan ke WhatsApp.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Konfirmasi
+                </h3>
+
+                <p>
+                    Kita membahas harga, detail,
+                    dan waktu pengerjaan.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Selesai
+                </h3>
+
+                <p>
+                    Hasil pesanan dikirim dalam
+                    bentuk file digital.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FORM ORDER
+    ================================= -->
+
+    <section id="order">
+
+        <h2>
+            🛒 Pesan Sekarang
+        </h2>
+
+        <p class="section-description">
+            Isi detail pesananmu di bawah ini.
+            Setelah dikirim, kamu akan langsung
+            diarahkan ke WhatsApp.
+        </p>
+
+
+        <form class="order-form" onsubmit="kirimWhatsApp(event)">
+
+
+            <div class="form-group">
+
+                <label for="nama">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama kamu"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="layanan">
+                    Pilih Layanan
+                </label>
+
+                <select id="layanan" required>
+
+                    <option value="">
+                        -- Pilih layanan --
+                    </option>
+
+                    <option value="Jasa Membuat Cerita">
+                        Jasa Membuat Cerita
+                    </option>
+
+                    <option value="Jasa Mengetik">
+                        Jasa Mengetik
+                    </option>
+
+                    <option value="Rapikan Tulisan">
+                        Rapikan Tulisan
+                    </option>
+
+                    <option value="Paket Lengkap">
+                        Paket Lengkap
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="jumlah">
+                    Jumlah / Panjang Pesanan
+                </label>
+
+                <input
+                    type="text"
+                    id="jumlah"
+                    placeholder="Contoh: 5 halaman / 1 cerita"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="detail">
+                    Detail Pesanan
+                </label>
+
+                <textarea
+                    id="detail"
+                    placeholder="Jelaskan pesanan atau ide yang kamu inginkan..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="deadline">
+                    Deadline
+                </label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn order-button"
+            >
+                📱 Kirim Pesanan ke WhatsApp
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+    <!-- ================================
+         CTA
+    ================================= -->
+
+    <section class="cta">
+
+        <h2>
+            Punya Ide? Saya Bantu Tuliskan! ✍️
+        </h2>
+
+        <p>
+            Jangan biarkan ide bagus hanya tersimpan
+            di kepala. Yuk, ubah menjadi tulisan!
+        </p>
+
+        <a href="#order" class="btn">
+            Mulai Pesan Sekarang
+        </a>
+
+    </section>
+
+
+    <!-- ================================
+         KONTAK
+    ================================= -->
+
+    <section id="kontak" class="contact">
+
+        <h2>
+            Hubungi Saya
+        </h2>
+
+        <p class="section-description">
+            Tertarik menggunakan jasa KataKita?
+            Silakan hubungi melalui kontak berikut.
+        </p>
+
+
+        <div class="hero-image">
+
+            <img
+                src="Thania.jpg"
+                alt="Jasa Menulis dan Mengetik"
+            >
+
+        </div>
+
+
+        <div class="contact-info">
+
+
+            <div class="contact-box">
+
+                <h3>
+                    📱 WhatsApp
+                </h3>
+
+                <p>
+                    082310825212
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    📷 Instagram
+                </h3>
+
+                <p>
+                    @katakita78
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>
+                    📧 Email
+                </h3>
+
+                <p>
+                    katakita78@email.com
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026
+            <strong>KataKita</strong>.
+            Jasa Menulis & Mengetik.
+        </p>
+
+        <p>
+            Dari ide menjadi kata. ✍️
+        </p>
+
+    </footer>
+
+
+    <!-- ================================
+         JAVASCRIPT ORDER WHATSAPP
+    ================================= -->
+
+    <script>
+
+        function kirimWhatsApp(event) {
+
+            event.preventDefault();
+
+
+            const nama =
+                document.getElementById("nama").value;
+
+            const layanan =
+                document.getElementById("layanan").value;
+
+            const jumlah =
+                document.getElementById("jumlah").value;
+
+            const detail =
+                document.getElementById("detail").value;
+
+            const deadline =
+                document.getElementById("deadline").value;
+
+
+            /*
+                Nomor WhatsApp KataKita
+                082310825212
+                diubah menjadi format internasional:
+                6282310825212
+            */
+
+            const nomorWhatsApp =
+                "6282310825212";
+
+
+            const pesan =
+                "Halo KataKita! 👋\n\n" +
+
+                "Saya ingin melakukan pemesanan.\n\n" +
+
+                "👤 Nama: " + nama + "\n" +
+
+                "📝 Layanan: " + layanan + "\n" +
+
+                "📄 Jumlah: " + jumlah + "\n" +
+
+                "📅 Deadline: " + deadline + "\n\n" +
+
+                "💡 Detail Pesanan:\n" +
+                detail +
+                "\n\n" +
+
+                "Mohon informasinya untuk harga " +
+                "dan proses selanjutnya. " +
+                "Terima kasih! 😊";
+
+
+            const url =
+                "https://wa.me/" +
+                nomorWhatsApp +
+                "?text=" +
+                encodeURIComponent(pesan);
+
+
+            window.open(url, "_blank");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
